@@ -1,5 +1,7 @@
 class SubsController < ApplicationController
   before_action :set_sub, only: %i[ show edit update destroy ]
+  # ログイン済みのユーザーにのみアクセスを許可する。
+  before_action :authenticate_user!
 
   # GET /subs or /subs.json
   def index
@@ -42,7 +44,7 @@ class SubsController < ApplicationController
 
 
 
-  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
