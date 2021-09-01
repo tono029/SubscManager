@@ -5,7 +5,7 @@ class SubsController < ApplicationController
 
   # GET /subs or /subs.json
   def index
-    @subs = Sub.all
+    @subs = Sub.where(user_id: current_user.id)
   end
 
   # GET /subs/1 or /subs/1.json
@@ -23,10 +23,13 @@ class SubsController < ApplicationController
 
   # POST /subs or /subs.json
   def create
-    @sub = Sub.new(sub_params)
+    # form にてモデルを指定している場合、params[:model][:属性]にする。
+    @sub = Sub.new(sub_name: params[:sub][:sub_name], 
+                   fee: params[:sub][:fee], 
+                   user_id: current_user.id)
     if @sub.save
 
-      redirect_to subs_path
+      redirect_to subs_url
     else
       render "subs/new"
     end
@@ -54,6 +57,6 @@ class SubsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sub_params
-      params.require(:sub).permit(:sub_name, :fee)
+      params.require(:sub).permit(:sub_name, :fee, :user_id)
     end
 end
