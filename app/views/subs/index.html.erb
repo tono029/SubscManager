@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
+<h1>Subs</h1><br/>
 
-<h1>Subs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Sub name</th>
-      <th>Fee</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @subs.each do |sub| %>
+<% if @subs.count != 0 %>
+  <table class="table table-striped table-bordered table-light table-hover">
+    <thead class="table-dark">
       <tr>
-        <td><%= sub.sub_name %></td>
-        <td><%= sub.fee %></td>
-        <td><%= link_to 'Show', sub %></td>
-        <td><%= link_to 'Edit', edit_sub_path(sub) %></td>
-        <td><%= link_to 'Destroy', sub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Sub name</th>
+        <th>Fee</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Sub', new_sub_path %>
+    <tbody>
+      <% @subs.each do |sub| %>
+        <tr>
+          <td><%= sub.sub_name %></td>
+          <td><%= sub.fee %></td>
+          <td><%= link_to 'Edit', edit_sub_path(sub) %></td>
+          <td><%= link_to 'Destroy', sub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>サービスが登録されていません。</p><br/>
+  <%= link_to  "登録", new_sub_path, class:"btn btn-success" %>
+<% end %>

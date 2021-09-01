@@ -22,39 +22,27 @@ class SubsController < ApplicationController
   # POST /subs or /subs.json
   def create
     @sub = Sub.new(sub_params)
+    if @sub.save
 
-    respond_to do |format|
-      if @sub.save
-        format.html { redirect_to @sub, notice: "Sub was successfully created." }
-        format.json { render :show, status: :created, location: @sub }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @sub.errors, status: :unprocessable_entity }
-      end
+      redirect_to subs_path
+    else
+      render "subs/new"
     end
   end
 
   # PATCH/PUT /subs/1 or /subs/1.json
   def update
-    respond_to do |format|
-      if @sub.update(sub_params)
-        format.html { redirect_to @sub, notice: "Sub was successfully updated." }
-        format.json { render :show, status: :ok, location: @sub }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @sub.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /subs/1 or /subs/1.json
   def destroy
     @sub.destroy
-    respond_to do |format|
-      format.html { redirect_to subs_url, notice: "Sub was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to subs_url
   end
+
+
+
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

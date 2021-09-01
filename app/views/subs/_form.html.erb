@@ -12,16 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :sub_name %>
-    <%= form.text_field :sub_name %>
-  </div>
+    <%= form.text_field :sub_name, class:"form-control",
+                         placeholder: "サービス名" %>
+  </div><br/>
 
   <div class="field">
-    <%= form.label :fee %>
-    <%= form.number_field :fee %>
+    <%= form.number_field :fee, class:"form-control",
+                         placeholder: "料金" %>
   </div>
 
+  <br/>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-success" %>
   </div>
 <% end %>
