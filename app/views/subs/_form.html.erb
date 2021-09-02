@@ -1,28 +1,54 @@
-<%= form_with(model: sub) do |form| %>
-  <% if sub.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(sub.errors.count, "error") %> prohibited this sub from being saved:</h2>
+<p>
+<button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#self" aria-expanded="false" aria-controls="collapseExample">
+  自分で登録
+</button>
+<button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#temp" aria-expanded="false" aria-controls="collapseExample">
+  テンプレートから登録
+</button>
+</p>
 
-      <ul>
-        <% sub.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+
+<%# 自分で登録 %>
+<div class="collapse" id="self"><br/>
+<div class="card card-body">
+  <%= form_with(model: sub, url: "/subs") do |form| %>
+
+    <div class="field">
+      <%= form.text_field :sub_name, class:"form-control",
+                          placeholder: "サービス名" %>
+    </div><br/>
+
+    <div class="field">
+      <%= form.number_field :fee, class:"form-control",
+                          placeholder: "料金" %>
+    </div><br/>
+
+    <div class="actions">
+      <%= form.submit class:"btn btn-success" %>
     </div>
   <% end %>
+</div>
+</div>
 
-  <div class="field">
-    <%= form.text_field :sub_name, class:"form-control",
-                         placeholder: "サービス名" %>
-  </div><br/>
+<%# テンプレート %>
+<div class="collapse" id="temp"><br/>
+<div class="card card-body">
+  <%= form_with(model: sub, url: "/subs") do |form| %>
 
-  <div class="field">
-    <%= form.number_field :fee, class:"form-control",
-                         placeholder: "料金" %>
-  </div>
+    <div class="field">
+      <%= form.text_field :sub_name, class:"form-control",
+                          placeholder: "サービス名" %>
+    </div><br/>
 
-  <br/>
-  <div class="actions">
-    <%= form.submit class:"btn btn-success" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= form.number_field :fee, class:"form-control",
+                          placeholder: "料金" %>
+    </div><br/>
+
+    <div class="actions">
+      <%= form.submit class:"btn btn-success" %>
+    </div>
+  <% end %>
+</div>
+</div>
+

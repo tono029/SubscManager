@@ -6,6 +6,11 @@ class SubsController < ApplicationController
   # GET /subs or /subs.json
   def index
     @subs = Sub.where(user_id: current_user.id)
+    @total_fee = 0
+    
+    @subs.each do |sub|
+      @total_fee += sub.fee
+    end
   end
 
   # GET /subs/1 or /subs/1.json
@@ -19,6 +24,7 @@ class SubsController < ApplicationController
 
   # GET /subs/1/edit
   def edit
+
   end
 
   # POST /subs or /subs.json

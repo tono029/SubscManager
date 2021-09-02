@@ -1,11 +1,12 @@
-<h1>Subs</h1><br/>
+<h1>登録サービス一覧</h1><br/>
 
 <% if @subs.count != 0 %>
+  <%= "料金　" + @total_fee.to_s + "/月です" %><br/>
   <table class="table table-striped table-bordered table-light table-hover">
     <thead class="table-dark">
       <tr>
-        <th>Sub name</th>
-        <th>Fee</th>
+        <th>サービス名</th>
+        <th>料金</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -15,8 +16,8 @@
         <tr>
           <td><%= sub.sub_name %></td>
           <td><%= sub.fee %></td>
-          <td><%= link_to 'Edit', edit_sub_path(sub) %></td>
-          <td><%= link_to 'Destroy', sub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '編集', edit_sub_path(sub) %></td>
+          <td><%= link_to '削除', sub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
