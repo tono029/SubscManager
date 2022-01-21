@@ -24,7 +24,7 @@ class SubsController < ApplicationController
 
   # GET /subs/1/edit
   def edit
-
+    
   end
 
   # POST /subs or /subs.json
@@ -43,6 +43,8 @@ class SubsController < ApplicationController
 
   # PATCH/PUT /subs/1 or /subs/1.json
   def update
+    @sub.update(sub_params)
+    redirect_to subs_url
   end
 
   # DELETE /subs/1 or /subs/1.json

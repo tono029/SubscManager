@@ -14,7 +14,7 @@
       <div class="field">
         <br />
         <%= f.password_field :password, autocomplete: "current-password",
-                             class:"form-control", placeholder: "Password" %>
+                             class:"form-control", placeholder: "パスワード" %>
       </div>
     
       <% if devise_mapping.rememberable? %>
@@ -25,10 +25,10 @@
       <% end %>
     
       <div class="actions">
-        <%= f.submit "Log in", class:"btn btn-dark" %>
+        <%= f.submit "ログイン", class:"btn btn-dark" %>
       </div>
     <% end %>
   </div>
-</div><br/>
+</div>
 
 <%= render "devise/shared/links" %>

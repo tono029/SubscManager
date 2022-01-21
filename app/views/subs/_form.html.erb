@@ -1,14 +1,14 @@
 <p>
 <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#self" aria-expanded="false" aria-controls="collapseExample">
-  自分で登録
+  自分で追加
 </button>
 <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#temp" aria-expanded="false" aria-controls="collapseExample">
-  テンプレートから登録
+  テンプレートから追加（未実装）
 </button>
 </p>
 
 
-<%# 自分で登録 %>
+
 <div class="collapse" id="self"><br/>
 <div class="card card-body">
   <%= form_with(model: sub, url: "/subs") do |form| %>
@@ -24,13 +24,13 @@
     </div><br/>
 
     <div class="actions">
-      <%= form.submit class:"btn btn-success" %>
+      <%= form.submit "追加", class:"btn btn-success" %>
     </div>
   <% end %>
 </div>
 </div>
 
-<%# テンプレート %>
+
 <div class="collapse" id="temp"><br/>
 <div class="card card-body">
   <%= form_with(model: sub, url: "/subs") do |form| %>
