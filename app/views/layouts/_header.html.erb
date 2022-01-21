@@ -1,50 +1,55 @@
 <header>
-  <nav class="navbar navbar-expand navbar-dark p-2" 
-     style="background-color: #009473;">
-  <div class="container-fluid">
-    <%= link_to "SubscManager", root_path, class:"navbar-brand" %>
+  <nav class="navbar navbar-expand-sm navbar-dark p-2" 
+    style="background-color: #009473;">
+    <div class="container-fluid">
 
-    <%# 画面が小さい時に出るドグルアイコン %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
+      <%# アイコン %>
+      <img src="/assets/icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      <%# プロジェクト名 %>
+      <%= link_to "SubscManager", root_path, class:"navbar-brand" %>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
+      <%# 画面が小さい時に出るドグルアイコン %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <li class="nav-item">
-          <%= link_to "詳細", home_about_path, class:"nav-link" %>
-        </li>
-
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "サブスク一覧", subs_path, class:"nav-link" %>
-          </li>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
 
           <li class="nav-item">
-            <%= link_to "サブスク登録", new_sub_path, class:"nav-link" %>
+            <%= link_to "詳細", home_about_path, class:"nav-link" %>
           </li>
+          <%# ログイン時 %>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "サブスク一覧", subs_path, class:"nav-link" %>
+            </li>
 
-          <li class="nav-item">
-            <%= link_to "ログアウト", destroy_user_session_path, 
-                        method: :delete, class:"nav-link",
-                        data: {confirm: "ログアウトしてよろしいですか？"} %>
-          </li>
+            <li class="nav-item">
+              <%= link_to "サブスク登録", new_sub_path, class:"nav-link" %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to "ログアウト", destroy_user_session_path, 
+                          method: :delete, class:"nav-link",
+                          data: {confirm: "ログアウトしてよろしいですか？"} %>
+            </li>
+
+          <%# セッション外 %>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "新規登録", new_user_registration_path, class:"nav-link" %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to "ログイン", new_user_session_path, class:"nav-link" %>
+            </li>
+          <% end %>
           
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "新規登録", new_user_registration_path, class:"nav-link" %>
-          </li>
 
-          <li class="nav-item">
-            <%= link_to "ログイン", new_user_session_path, class:"nav-link" %>
-          </li>
-        <% end %>
-        
-
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
   </nav>
 </header>
