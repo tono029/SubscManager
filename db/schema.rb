@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_01_131016) do
+ActiveRecord::Schema.define(version: 2022_01_22_052902) do
 
   create_table "subs", force: :cascade do |t|
     t.string "sub_name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_131016) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "period"
     t.index ["user_id"], name: "index_subs_on_user_id"
   end
 

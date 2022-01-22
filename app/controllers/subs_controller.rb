@@ -9,7 +9,11 @@ class SubsController < ApplicationController
     @total_fee = 0
     
     @subs.each do |sub|
-      @total_fee += sub.fee
+      if sub.period == "/月"
+        @total_fee += sub.fee
+      else
+        @total_fee += sub.fee / 12
+      end
     end
   end
 
@@ -31,7 +35,8 @@ class SubsController < ApplicationController
   def create
     # form にてモデルを指定している場合、params[:model][:属性]にする。
     @sub = Sub.new(sub_name: params[:sub][:sub_name], 
-                   fee: params[:sub][:fee], 
+                   fee: params[:sub][:fee],
+                   period: params[:sub][:period],
                    user_id: current_user.id)
     if @sub.save
 
@@ -65,6 +70,6 @@ class SubsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sub_params
-      params.require(:sub).permit(:sub_name, :fee, :user_id)
+      params.require(:sub).permit(:sub_name, :fee, :user_id, :period)
     end
 end

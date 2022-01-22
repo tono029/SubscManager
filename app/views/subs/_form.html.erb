@@ -4,12 +4,11 @@
   </button>
 </div>
 
-<br/>
-<div>
+<%# <div>
   <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#temp" aria-expanded="false" aria-controls="collapseExample">
     テンプレートから追加（未実装）
   </button>
-</div>
+</div> %>
 
 
 <div class="collapse" id="self"><br/>
@@ -18,13 +17,22 @@
 
       <div class="field">
         <%= form.text_field :sub_name, class:"form-control",
-                            placeholder: "サービス名" %>
+        placeholder: "サービス名" %>
       </div><br/>
 
-      <div class="field">
-        <%= form.number_field :fee, class:"form-control",
-                            placeholder: "料金" %>
-      </div><br/>
+      <div class="field row ">
+        <div class="col-auto">
+          <%= form.number_field :fee, class:"form-control",
+          placeholder: "料金" %>
+        </div>
+
+        <div class="col-auto">
+          <%= form.select :period, {"/月": "/月", "/年": "/年"}, {},
+          {class: "form-select"} %>
+        </div>
+      </div>
+      
+      <br/>
 
       <div class="actions">
         <%= form.submit "追加", class:"btn btn-success" %>

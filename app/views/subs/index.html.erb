@@ -3,7 +3,7 @@
 <%# サービスが登録されていれば %>
 <% if @subs.count != 0 %>
   <p>
-    <%= "料金は" + @total_fee.to_s + "円/月です。" %>
+    <%= "月々の料金は" + @total_fee.to_s + "円です。" %>
   </p>
   <br/>
 
@@ -20,10 +20,10 @@
       <% @subs.each do |sub| %>
         <tr>
           <td align="center"><%= sub.sub_name %></td>
-          <td align="center"><%= sub.fee.to_s + "円" %></td>
-          <td align="center"><%= link_to '編集', edit_sub_path(sub) %></td>
+          <td align="center"><%= sub.fee.to_s + "円" + sub.period %></td>
+          <td align="center"><%= link_to '編集', edit_sub_path(sub), class:"btn btn-link btn-sm" %></td>
           <td align="center"><%= link_to '削除', sub, method: :delete,
-           data: { confirm: '削除してよろしいですか？' } %></td>
+           data: { confirm: '削除してよろしいですか？' }, class:"btn btn-link btn-sm" %></td>
         </tr>
       <% end %>
     </tbody>

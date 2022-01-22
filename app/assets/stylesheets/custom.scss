@@ -51,6 +51,11 @@ body {
   color: white;
   padding: 10px 40px 10px 40px;
   background-color: #001220;
+  text-align: center;
+}
+
+.shared-links {
+  text-align: right;
 }
 
 .spacer { 
@@ -77,6 +82,7 @@ body {
 
 .navbar-brand  {
   font-size: 25px;
+  margin-right: auto;
 }
 
 .nav-item a {
@@ -88,22 +94,10 @@ body {
   text-align: center;
 }
 
-.btn {
-  // display: block;
-  margin:0 20px ;
-}
-
-
-// new------------------------------------
-.new-mess {
-  padding-bottom: 30px;
-  text-align: center;
-}
 
 
 
 // footer---------------------------------
 footer {
-  padding: 10px;
   background-color: #009473;
 }
