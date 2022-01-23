@@ -1,24 +1,20 @@
-# README
+# Subsc_Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+"Subsc_Manager"は利用しているサブスクリプションサービスを登録し、管理することを目的としたサービスです。
 
-Things you may want to cover:
+# 使用技術
+* Ruby
+* Ruby on Rails
 
-* Ruby version
+# 機能
+* ユーザー登録、ログイン(devise)
+* サービス管理
+    * 月々の料金計算
+    * 追加
+    * 編集
+    * 削除
+* ページネーション(kaminari)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 追加予定の機能
+* 
+* 

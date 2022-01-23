@@ -2,7 +2,7 @@
   <div class="card-header">
     <h3>新規登録</h3>
   </div>
-  
+
   <div class="card-body">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -25,7 +25,7 @@
                              class:"form-control", placeholder: "パスワード確認" %>
       </div><br/>
     
-      <div class="actions">
+      <div class="actions field text-end">
         <%= f.submit "登録する", class:"btn btn-dark" %>
       </div>
     <% end %>
