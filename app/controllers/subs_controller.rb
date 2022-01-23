@@ -41,6 +41,7 @@ class SubsController < ApplicationController
     if @sub.save
 
       redirect_to subs_url
+    # 保存できないとき
     else
       render "subs/new"
     end
