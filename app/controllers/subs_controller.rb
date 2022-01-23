@@ -5,10 +5,11 @@ class SubsController < ApplicationController
 
   # GET /subs or /subs.json
   def index
-    @subs = Sub.where(user_id: current_user.id)
-    @total_fee = 0
+    @subs_for_fee = Sub.where(user_id: current_user.id)
+    @subs = Sub.where(user_id: current_user.id).page(params[:page]).per(5)
     
-    @subs.each do |sub|
+    @total_fee = 0
+    @subs_for_fee.each do |sub|
       if sub.period == "/月"
         @total_fee += sub.fee
       else

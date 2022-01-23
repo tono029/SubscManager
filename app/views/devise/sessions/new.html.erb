@@ -5,16 +5,20 @@
   
   <div class="card-body">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="error-mess">
+        <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+      
       <div class="field">
         <br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email",
-                          class:"form-control", placeholder: "Email" %>
+        class:"form-control", placeholder: "Email" %>
       </div>
     
       <div class="field">
         <br />
         <%= f.password_field :password, autocomplete: "current-password",
-                             class:"form-control", placeholder: "パスワード" %>
+        class:"form-control", placeholder: "パスワード" %>
       </div>
     
       <% if devise_mapping.rememberable? %>
