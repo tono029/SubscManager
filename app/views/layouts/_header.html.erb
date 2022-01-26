@@ -4,7 +4,8 @@
     <div class="container-fluid">
 
       <%# アイコン %>
-      <img src="/assets/icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      <%# <img src="/assets/icon.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"> %>
+      <%= image_tag "icon.svg", size: "30x24" %>
       <%# プロジェクト名 %>
       <%= link_to "SubscManager", root_path, class:"navbar-brand" %>
 
