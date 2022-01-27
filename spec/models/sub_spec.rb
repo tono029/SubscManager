@@ -21,5 +21,11 @@ RSpec.describe "Sub", type: :model do
     expect(@sub).to be_valid
   end
 
-
+  it "is invalid with a duplicate email" do
+    @user = User.new(
+    email: "test@example.com",
+    password: "password"
+    )
+    expect(@user.valid?).to eq(false)
+  end
 end
