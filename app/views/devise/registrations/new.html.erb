@@ -10,19 +10,22 @@
       <div class="field">
         <% f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email",
-                           class:"form-control", placeholder: "メールアドレス" %>
+        class:"form-control", placeholder: "メールアドレス",
+        id: "email" %>
       </div>
     
       <div class="field">
         <% f.label :password %><br />
         <%= f.password_field :password, autocomplete: "new-password",
-                             class:"form-control", placeholder: "パスワード (#{@minimum_password_length}文字以上)" %>
+        class:"form-control", placeholder: "パスワード (#{@minimum_password_length}文字以上)",
+        id: "password" %>
       </div>
     
       <div class="field">
         <% f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password",
-                             class:"form-control", placeholder: "パスワード確認" %>
+        class:"form-control", placeholder: "パスワード確認",
+        id: "password-confirm" %>
       </div><br/>
     
       <div class="actions field text-end">
