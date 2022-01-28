@@ -5,33 +5,15 @@
   </div>
 
   <div class="card-body">
-    <%= form_for(@sub) do |f| %>
-      <div class="field row">
-        <div>
-          <%= f.label "サービス名" %>
-          <%= f.text_field :sub_name, autofocus: true, 
-          autocomplete: @sub.sub_name, class:"form-control" %>
-        </div>
-      </div>
-      <br/>
-
-      <div class="field row">
-        <%= f.label "料金"%>
-        <div class="col">
-          <%= f.number_field :fee, autofocus: true, 
-          autocomplete: @sub.fee, class:"form-control" %>
-        </div>
-        <div class="col-auto">
-          <%= f.select :period, {"/月": "/月", "/年": "/年"}, {},
-          {class: "form-select"} %>
-        </div>
-      </div>
+    <%= form_for(@sub) do |form| %>
+      <%= render "error", sub: @sub %><br/>
+      <%= render "form", form: form %>
 
       <br/>
 
       <div class="actions field row">
         <div class="text-end">
-          <%= f.submit "変更を適用", class:"btn btn-dark" %>
+          <%= form.submit "変更を適用", class:"btn btn-dark" %>
         </div>
       </div>
     <% end %>

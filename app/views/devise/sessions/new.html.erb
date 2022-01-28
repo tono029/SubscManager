@@ -5,14 +5,13 @@
   
   <div class="card-body">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="error-mess">
-        <%= render "devise/shared/error_messages", resource: resource %>
-      </div>
-      
+      <%# ログイン画面は以下ではメッセージが表示されない %>
+      <%# <%= render "devise/shared/error_messages", resource: resource %>
+      <p class="alert"><%= alert %></p>
       <div class="field">
         <br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email",
-        class:"form-control", placeholder: "Email" %>
+        class:"form-control", placeholder: "メールアドレス" %>
       </div>
     
       <div class="field">

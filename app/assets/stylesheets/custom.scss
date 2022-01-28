@@ -64,6 +64,20 @@ body {
   text-align: center;
 }
 
+// header------------------------------------------
+.navbar {
+  padding-top: 15px;
+}
+
+.navbar-brand  {
+  font-size: 25px;
+  margin-right: auto;
+}
+
+.nav-item a {
+  font-size: 16px;
+}
+
 // card-------------------------------------
 .card {
   margin:auto;
@@ -90,6 +104,14 @@ body {
   overflow: hidden;
 }
 
+.table tr td:nth-child(3) {
+  width: 100px;
+}
+
+.table tr td:nth-child(4) {
+  width: 100px;
+}
+
 .shared-links {
   text-align: right;
 }
@@ -111,33 +133,56 @@ body {
     background-image: image-url("layer2.svg");
   }
 
-// header------------------------------------------
-.navbar {
-  padding-top: 15px;
+// btn----------------------------------
+.btn-success {
+  background-color: #009473;
 }
 
-.navbar-brand  {
-  font-size: 25px;
-  margin-right: auto;
+// flash------------------------------
+.flash-notice {
+  text-align: center;
+  background-color: #009473;
+  border-radius: 10px;
+  margin: auto;
+  max-width: 200px;
 }
 
-.nav-item a {
-  font-size: 16px;
+.flash-alert {
+  text-align: center;
+  margin: auto;
+}
+
+.alert {
+  padding: 0 0;
+  margin-bottom: 0;
+}
+
+.error-mess {
+  text-align: center;
 }
 
 // top----------------------------------
 .top-mess {
   text-align: center;
+  .log-notice {
+    text-align: center;
+    background-color: #009473;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 200px;
+  }
 }
 
 // pagination-----------------------------
-.pagination {
-  // justify-content: center;
-}
-
 .pagination li a {
   color: gray;
   border: none;
+}
+
+// shared-links
+.links {
+  max-width: 600px;
+  margin: auto;
 }
 
 

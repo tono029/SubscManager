@@ -1,38 +1,21 @@
-<div class="card-body">
-  <%= form_with(model: sub, url: "/subs") do |form| %>
-    <div class="error-mess">
-    </div>
+<div class="field row">
+  <div>
+    <%= form.label "サービス名" %>
+    <%= form.text_field :sub_name, class:"form-control"%>
+  </div>
+</div><br/>
 
-    <div class="field row">
-      <div>
-        <%= form.text_field :sub_name, class:"form-control",
-        placeholder: "サービス名" %>
-      </div>
-    </div><br/>
+<div class="field row justify-content-between">
+  <%= form.label "料金" %>
+  <div class="col-8">
+    <%= form.number_field :fee, class:"form-control" %>
+  </div>
 
-    <div class="field row justify-content-between">
-      <div class="col">
-        <%= form.number_field :fee, class:"form-control",
-        placeholder: "料金" %>
-      </div>
-
-      <div class="col-auto">
-        <%= form.select :period, {"/月": "/月", "/年": "/年"}, {},
-        {class: "form-select"} %>
-      </div>
-    </div>
-    
-    <br/>
-
-    <div class="actions field row">
-      <div class="text-end">
-        <%= form.submit "追加", class:"btn btn-dark" %>
-      </div>
-    </div>
-
-  <% end %>
+  <div class="col-auto">
+    <%= form.select :period, {"/月": "/月", "/年": "/年"}, {},
+    {class: "form-select"} %>
+  </div>
 </div>
-
 
 
 

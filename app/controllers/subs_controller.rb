@@ -40,24 +40,29 @@ class SubsController < ApplicationController
                    period: params[:sub][:period],
                    user_id: current_user.id)
     if @sub.save
-
-      redirect_to subs_url
+      redirect_to subs_url, notice: "登録に成功しました。"
     # 保存できないとき
     else
+      flash.now[:alert] = "入力に誤りがあります。"
       render "subs/new"
     end
   end
 
   # PATCH/PUT /subs/1 or /subs/1.json
   def update
-    @sub.update(sub_params)
-    redirect_to subs_url
+    if @sub.update(sub_params)
+      redirect_to subs_url, notice: "編集を適用しました。"
+    # 編集内容がvalidationにひっかかったら。
+    else
+      # 描画するviewファイルを指定。
+      render "subs/edit"
+    end
   end
 
   # DELETE /subs/1 or /subs/1.json
   def destroy
     @sub.destroy
-    redirect_to subs_url
+    redirect_to subs_url, notice: "削除が完了しました。"
   end
 
 

@@ -1,0 +1,9 @@
+<div class="flash-alert">
+    <% if sub.errors.any? %>
+        <% sub.errors.full_messages.each do |mess| %>
+            <ul>
+            <li><%= "・" + mess + "。" %></li>
+            </ul>
+        <% end %>
+    <% end %>
+</div>

@@ -1,7 +1,11 @@
 <h3>登録サービス一覧</h3><br/>
 
+
 <%# サービスが登録されていれば %>
 <% if @subs.count != 0 %>
+  <div class="flash-notice">
+    <%= flash[:notice] %>
+  </div>
   <p>
     <%= "月々の料金は" + @total_fee.to_s + "円です。" %>
   </p>
@@ -46,5 +50,6 @@
 <%# 一つも登録がなければ %>
 <% else %>
   <p>サービスが登録されていません。</p><br/>
-  <%= link_to  "サービスを追加登録", new_sub_path, class:"btn btn-success" %>
+  <%= link_to  "サービスを追加登録", new_sub_path, 
+  class:"btn btn-success text-nowrap" %>
 <% end %>
