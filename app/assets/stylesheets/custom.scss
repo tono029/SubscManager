@@ -86,13 +86,17 @@ body {
     width: 80%;
     margin: auto;
   }
-  .actions {
-    margin-left: auto !important;
+  h3 {
+    text-align: left;
   }
   .row>* {
     padding: 0 0;
   }
+  .btn {
+    border: 0;
+  }
 }
+
 
 // table------------------------------------
 .table {
@@ -102,14 +106,22 @@ body {
   border-spacing: 0;
   border-collapse: separate;
   overflow: hidden;
+  .btn-link {
+    text-decoration: none;
+  }
+  .name {
+    font-size: 1rem;
+  }
 }
 
 .table tr td:nth-child(3) {
   width: 100px;
+  text-decoration: none;
 }
 
 .table tr td:nth-child(4) {
   width: 100px;
+  text-decoration: none;
 }
 
 .shared-links {
@@ -180,7 +192,7 @@ body {
 // flash------------------------------
 .flash-notice {
   text-align: center;
-  background-color: #009473;
+  background-color: #1a7a59;
   border-radius: 10px;
   margin: auto;
   max-width: 200px;
@@ -189,6 +201,7 @@ body {
 .flash-alert {
   text-align: center;
   margin: auto;
+  padding-bottom: 10px;
 }
 
 .alert {
@@ -205,7 +218,7 @@ body {
   text-align: center;
   .log-notice {
     text-align: center;
-    background-color: #009473;
+    background-color: #1a7a59;
     border-radius: 10px;
     margin: auto;
     max-width: 200px;
@@ -228,5 +241,5 @@ body {
 // footer---------------------------------
 footer {
   background-color: #125635;
-  min-width: 20px;
+  padding: 10px;
 }

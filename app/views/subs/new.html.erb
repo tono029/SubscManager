@@ -1,25 +1,18 @@
-<div class="card text-dark bg-light mb-3">
-  <div class="card-header">
+<div class="card text-dark mb-3">
+  <div class="card-header shadow">
     <h3>サービスを追加</h3>
   </div>
   <div class="card-body">
     <%= form_with(model: @sub, url: "/subs") do |form| %>
       <%= render "error", sub: @sub %>
-      <br/>
       <%= render 'form', form: form %>
       <br/>
 
       <div class="actions field row">
         <div class="text-end">
-          <%= form.submit "追加", class:"btn btn-dark" %>
+          <%= form.submit "追加", class:"btn btn-dark shadow" %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
-<%# <div>
-  <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#temp" aria-expanded="false" aria-controls="collapseExample">
-    テンプレートから追加（未実装）
-  </button>
-</div> %>

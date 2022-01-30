@@ -17,7 +17,7 @@
     <div class="pie-chart">
       <p id="chart-title">料金内訳</p>
       <%= pie_chart @chart, legend: false, 
-      height: "250px",
+      height: "250px", loading: "loading...",
       dataset: {borderColor: "#001220", borderWidth: "3"},
       suffix: "円", thousands: ",",
       donut: true,
@@ -38,7 +38,13 @@
     <tbody>
       <% @subs.each do |sub| %>
         <tr>
-          <td align="center"><%= sub.sub_name %></td>
+          <%# urlが指定されていなければ名前だけ %>
+          <% if sub.url.empty? %>
+            <td align="center"><%= sub.sub_name %></td>
+          <% else %>
+            <td align="center"><%= link_to sub.sub_name, sub.url,
+            target: :_blank, rel: "noopener noreferrer", class: "name" %></td>
+          <% end %>
           <td align="center"><%= sub.fee.to_s(:delimited) + "円 " + sub.period %></td>
           <td align="center"><%= link_to '編集', edit_sub_path(sub), class:"btn btn-link btn-sm" %></td>
           <td align="center"><%= link_to '削除', sub, method: :delete,

@@ -1,19 +1,23 @@
 <%# 編集フォーム %>
-<div class="card text-dark bg-light mb-3">
-  <div class="card-header">
+<div class="card text-dark mb-3">
+  <div class="card-header shadow">
     <h3>サービス内容の編集</h3>
   </div>
 
   <div class="card-body">
     <%= form_for(@sub) do |form| %>
-      <%= render "error", sub: @sub %><br/>
+      <%= render "error", sub: @sub %>
       <%= render "form", form: form %>
 
       <br/>
 
-      <div class="actions field row">
-        <div class="text-end">
-          <%= form.submit "変更を適用", class:"btn btn-dark" %>
+      <div class="field row justify-content-end">
+        <div class="col-auto ml-atuo me-1">
+          <%= form.submit "変更を適用", class:"btn btn-dark shadow" %>
+        </div>
+
+        <div class="col-auto border-none">
+          <%= link_to "戻る", subs_path, class:"btn btn-dark shadow" %>
         </div>
       </div>
     <% end %>

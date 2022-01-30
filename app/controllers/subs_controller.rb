@@ -40,6 +40,7 @@ class SubsController < ApplicationController
     @sub = Sub.new(sub_name: params[:sub][:sub_name], 
                    fee: params[:sub][:fee],
                    period: params[:sub][:period],
+                   url: params[:sub][:url],
                    user_id: current_user.id)
     if @sub.save
       redirect_to subs_url, notice: "登録に成功しました。"
@@ -66,10 +67,7 @@ class SubsController < ApplicationController
     @sub.destroy
     redirect_to subs_url, notice: "削除が完了しました。"
   end
-
-
-
-
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -79,6 +77,6 @@ class SubsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sub_params
-      params.require(:sub).permit(:sub_name, :fee, :user_id, :period)
+      params.require(:sub).permit(:sub_name, :fee, :url, :user_id, :period)
     end
 end
