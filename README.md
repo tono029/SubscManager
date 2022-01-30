@@ -1,6 +1,9 @@
 # SubscManager
 "SubscManager"は利用しているサブスクリプションサービスを登録し、管理することを目的としたサービスです。
 
+# URL
+* [SubscManager](https://subscmanager.herokuapp.com/)
+
 # 使用技術
 * Ruby
 * Ruby on Rails
