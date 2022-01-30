@@ -7,6 +7,8 @@ class SubsController < ApplicationController
   def index
     @subs_for_fee = Sub.where(user_id: current_user.id)
     @subs = Sub.where(user_id: current_user.id).page(params[:page]).per(5)
+    # グラフ用のデータ(金額でソート)
+    @chart = @subs_for_fee.order(fee: "DESC").pluck("sub_name", "fee")
     
     @total_fee = 0
     @subs_for_fee.each do |sub|

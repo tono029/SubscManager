@@ -52,7 +52,7 @@ body {
 .main {
   height: 100%;
   color: white;
-  padding: 10px 40px 10px 40px;
+  padding: 25px 40px 25px 40px;
   background-color: #001220;
 }
 
@@ -135,7 +135,46 @@ body {
 
 // btn----------------------------------
 .btn-success {
-  background-color: #009473;
+  background-color: #125635;
+  border-color: #125635;
+}
+
+// chart------------------------
+.fee-pie {
+  display: table;
+  max-width: 600px;
+  margin: auto;
+  p {
+    margin: auto;
+  }
+}
+
+.fee {
+  width: 50%;
+  display: table-cell;
+  vertical-align: middle;
+  h1 {
+    text-align: center;
+    font-size: 50px;
+  }
+}
+
+#first {
+  text-align: left;
+}
+#end {
+  text-align: right;
+}
+
+.pie-chart {
+  margin:auto;
+  p {
+    padding-bottom: 5px;
+  }
+}
+
+#chart-title {
+  font-size: 20px;
 }
 
 // flash------------------------------
@@ -189,4 +228,5 @@ body {
 // footer---------------------------------
 footer {
   background-color: #009473;
+  min-width: 20px;
 }

@@ -1,15 +1,30 @@
 <h3>登録サービス一覧</h3><br/>
 
-
 <%# サービスが登録されていれば %>
 <% if @subs.count != 0 %>
   <div class="flash-notice">
     <%= flash[:notice] %>
   </div>
-  <p>
-    <%= "月々の料金は" + @total_fee.to_s + "円です。" %>
-  </p>
-  <br/>
+
+  <div class="fee-pie">
+    <div class="fee">
+      <p id="first"><%= "月々の料金は" %></p>
+      <h1><%= @total_fee.to_s(:delimited) + "円" %></h1>
+      <p id="end"><%= "です。" %></p>
+    </div>
+
+    <%# 円グラフ %>
+    <div class="pie-chart">
+      <p id="chart-title">料金内訳</p>
+      <%= pie_chart @chart, legend: false, 
+      height: "250px",
+      dataset: {borderColor: "#001220", borderWidth: "3"},
+      suffix: "円", thousands: ",",
+      donut: true,
+      colors: ["#0b3517", "#125635", "#1a7a59", "#21a17f", "#00bc41", "#64e449", "#afed7c", "#e4eda9"]
+      %>
+    </div>
+  </div><br/>
 
   <table class="table table-striped table-light table-hover">
     <thead class="table-dark">
@@ -24,16 +39,14 @@
       <% @subs.each do |sub| %>
         <tr>
           <td align="center"><%= sub.sub_name %></td>
-          <td align="center"><%= sub.fee.to_s + "円" + sub.period %></td>
+          <td align="center"><%= sub.fee.to_s(:delimited) + "円 " + sub.period %></td>
           <td align="center"><%= link_to '編集', edit_sub_path(sub), class:"btn btn-link btn-sm" %></td>
           <td align="center"><%= link_to '削除', sub, method: :delete,
            data: { confirm: '削除してよろしいですか？' }, class:"btn btn-link btn-sm" %></td>
         </tr>
       <% end %>
     </tbody>
-  </table>
-
-  <br/>
+  </table><br/>
 
   <div class="row justify-content-evenly">
     <div class="pagiWrapper col-auto">
@@ -45,7 +58,6 @@
       class: "btn btn-success text-nowrap" %>
     </div>
   </div>
-  
 
 <%# 一つも登録がなければ %>
 <% else %>
