@@ -97,6 +97,9 @@ body {
   }
 }
 
+.card-body {
+  padding: 1rem 0;
+}
 
 // table------------------------------------
 .table {
@@ -201,7 +204,7 @@ body {
 .flash-alert {
   text-align: center;
   margin: auto;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .alert {
@@ -209,7 +212,7 @@ body {
   margin-bottom: 0;
 }
 
-.error-mess {
+.error-mess p {
   text-align: center;
 }
 
@@ -221,8 +224,15 @@ body {
     background-color: #1a7a59;
     border-radius: 10px;
     margin: auto;
-    max-width: 200px;
+    max-width: 250px;
+    margin-bottom: 10px;
   }
+}
+
+.explain-img{
+  border-radius: 2rem;
+  border: 4px solid;
+  border-color: #125635;
 }
 
 // pagination-----------------------------
@@ -241,5 +251,5 @@ body {
 // footer---------------------------------
 footer {
   background-color: #125635;
-  padding: 10px;
+  padding: 5px;
 }

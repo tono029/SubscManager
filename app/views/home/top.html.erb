@@ -1,12 +1,20 @@
 <div class="top-mess">
-    <p class="log-notice"><%= notice %></p><br/>
-    <h1>SubscManager</h1><br/>
+  <p class="log-notice text-nowrap"><%= notice %></p>
+  <h1>SubscManager</h1><br/>
 
-    <p>登録しているサブスクリプションサービスをリストに追加して管理、月々の支払い料金を確認しましょう。</p>
-</div>
-<br/>
+  <%# 一覧画面の画像で説明 %>
+  <div calss="explain">
+    <div class="explain-text">
+      <p>利用しているサービスを登録、管理する機能を提供します。</p><br/><br/>
+      <p>リストに登録されたサービスの月々の料金を表示し、円グラフを用いることでその内訳を一目で把握することができます。
+      また、リンク先を設定することでサービス名がリンクになるため、当該サービスの登録や解除がスムーズに行えます。</p>
+    </div><br/>
+    
+    <%= image_tag "explain.png", size: "500x525",
+    class: "explain-img" %>
+  </div>
+</div><br/>
 
-<%# 一覧画面の画像で説明 %>
 
 <div class="d-grid gap-2 col-6 mx-auto">
     <%= link_to("さっそく試してみる", new_sub_path,
