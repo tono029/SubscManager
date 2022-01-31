@@ -38,8 +38,7 @@
     <tbody>
       <% @subs.each do |sub| %>
         <tr>
-          <%# urlが指定されていなければ名前だけ %>
-          <% if sub.url.empty? %>
+          <% if sub.url.blank? %>
             <td align="center"><%= sub.sub_name %></td>
           <% else %>
             <td align="center"><%= link_to sub.sub_name, sub.url,
