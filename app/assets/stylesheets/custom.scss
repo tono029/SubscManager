@@ -52,7 +52,7 @@ body {
 .main {
   height: 100%;
   color: white;
-  padding: 25px 40px 25px 40px;
+  padding: 15px 40px 25px 40px;
   background-color: #001220;
 }
 
@@ -232,6 +232,11 @@ body {
     max-width: 250px;
     margin-bottom: 10px;
   }
+}
+
+.explain-text {
+  max-width: 540px;
+  margin: auto;
 }
 
 .explain-img{
