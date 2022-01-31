@@ -7,6 +7,7 @@
 # 使用技術
 * Ruby
 * Ruby on Rails
+* heroku
 
 # 機能
 * ユーザー登録、ログイン(devise)
