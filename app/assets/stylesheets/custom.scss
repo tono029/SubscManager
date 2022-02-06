@@ -46,13 +46,13 @@ body {
   min-height: 100%;
   // grid配置
   display: grid;
-  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-rows: 1fr auto auto;
 }
 
 .main {
   height: 100%;
   color: white;
-  padding: 15px 40px 25px 40px;
+  padding: 15vh 40px 25px 40px;
   background-color: #001220;
 }
 
@@ -65,6 +65,12 @@ body {
 }
 
 // header------------------------------------------
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
 .navbar {
   padding-top: 15px;
 }
@@ -132,10 +138,22 @@ body {
   text-decoration: none;
 }
 
+.unta {
+  max-width: 600px;
+  margin: auto;
+
+  .col-auto {
+    margin: auto;
+    text-align: center;
+  }
+}
+
+
 .shared-links {
   text-align: right;
 }
 
+// spacer--------------------------------------------
 .spacer { 
   aspect-ratio: 900/50;
   width: 100%;
@@ -147,6 +165,8 @@ body {
   .layer1 {
     // assetにある画像
     background-image: image-url("layer1.svg");
+    position: fixed;
+    margin-top: 63.5px;
   }
 
   .layer2 {
@@ -214,7 +234,8 @@ body {
 
 .alert {
   padding: 0 0;
-  margin-bottom: 0;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .error-mess p {
