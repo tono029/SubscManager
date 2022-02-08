@@ -1,5 +1,5 @@
 <div class="card text-dark bg-light mb-3">
-  <div class="card-header">
+  <div class="card-header shadow">
     <h3>ログイン</h3>
   </div>
   
@@ -11,16 +11,16 @@
         <p class="alert"><%= "・" + alert %></p>
       <% end %>
       <div class="field">
-        <br />
+        <br/>
         <%= f.email_field :email, autofocus: true, autocomplete: "email",
-        class:"form-control", placeholder: "メールアドレス" %>
+        class:"form-control shadow", placeholder: "メールアドレス" %>
       </div>
     
       <div class="field">
         <br/>
         <%= f.password_field :password, autocomplete: "current-password",
-        class:"form-control", placeholder: "パスワード" %>
-      </div>
+        class:"form-control shadow", placeholder: "パスワード" %>
+      </div><br/>
     
       <% if devise_mapping.rememberable? %>
         <div class="field form-check">
@@ -30,7 +30,7 @@
       <% end %>
     
       <div class="actions field text-end">
-        <%= f.submit "ログイン", class:"btn btn-dark" %>
+        <%= f.submit "ログイン", class:"btn btn-dark shadow" %>
       </div>
     <% end %>
   </div>

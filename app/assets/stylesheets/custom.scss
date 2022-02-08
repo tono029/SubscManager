@@ -41,6 +41,7 @@ form input[type="submit"] {
 body {
   color: #2d3133;
   background-color: #ffffff;
+  width: 100%;
   margin: 0;
   height: 100%;
   min-height: 100%;
@@ -51,9 +52,11 @@ body {
 
 .main {
   height: 100%;
+  width: 100%;
   color: white;
-  padding: 20vh 40px 25px 40px;
+  padding: 150px 40px 25px 40px;
   background-color: #001220;
+  box-sizing: border-box;
 }
 
 .main h3 {
@@ -72,6 +75,7 @@ header {
 }
 
 .navbar {
+  width: 100%;
   padding-top: 15px;
 }
 
@@ -129,12 +133,12 @@ header {
 }
 
 .table tr td:nth-child(3) {
-  width: 100px;
+  width: 80px;
   text-decoration: none;
 }
 
 .table tr td:nth-child(4) {
-  width: 100px;
+  width: 80px;
   text-decoration: none;
 }
 
@@ -183,6 +187,7 @@ header {
 // chart------------------------
 .fee-pie {
   display: table;
+  width: 100%;
   max-width: 600px;
   margin: auto;
   p {
@@ -191,8 +196,8 @@ header {
 }
 
 .fee {
-  width: 50%;
   display: table-cell;
+  width: 50%;
   vertical-align: middle;
   h1 {
     text-align: center;
@@ -207,16 +212,25 @@ header {
   text-align: right;
 }
 
-.pie-chart {
-  margin:auto;
+.pie-con {
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
   p {
+    font-size: 1rem;
     padding-bottom: 5px;
   }
 }
 
-#chart-title {
-  font-size: 20px;
+
+#chart-1 {
+  width: 170px !important;
+  height: 170px !important;
+  line-height: 170px !important;
+  margin: auto;
 }
+
 
 // flash------------------------------
 .flash-notice {
@@ -257,7 +271,7 @@ header {
 }
 
 .explain-text {
-  max-width: 540px;
+  max-width: 600px;
   margin: auto;
 }
 
@@ -265,6 +279,8 @@ header {
   border-radius: 2rem;
   border: 4px solid;
   border-color: #125635;
+  max-width: 100%;
+  height: auto;
 }
 
 // pagination-----------------------------
@@ -283,5 +299,4 @@ header {
 // footer---------------------------------
 footer {
   background-color: #125635;
-  padding: 5px;
 }

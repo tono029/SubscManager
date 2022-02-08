@@ -1,5 +1,5 @@
 <div class="card text-dark bg-light mb-3">
-  <div class="card-header">
+  <div class="card-header shadow">
     <h3>新規登録</h3>
   </div>
 
@@ -11,26 +11,26 @@
       <div class="field">
         <% f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email",
-        class:"form-control", placeholder: "メールアドレス",
+        class:"form-control shadow", placeholder: "メールアドレス",
         id: "email" %>
       </div>
     
       <div class="field">
         <% f.label :password %><br />
         <%= f.password_field :password, autocomplete: "new-password",
-        class:"form-control", placeholder: "パスワード (#{@minimum_password_length}文字以上)",
+        class:"form-control shadow", placeholder: "パスワード (#{@minimum_password_length}文字以上)",
         id: "password" %>
       </div>
     
       <div class="field">
         <% f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password",
-        class:"form-control", placeholder: "パスワード確認",
+        class:"form-control shadow", placeholder: "パスワード確認",
         id: "password-confirm" %>
       </div><br/>
     
       <div class="actions field text-end">
-        <%= f.submit "登録する", class:"btn btn-dark" %>
+        <%= f.submit "登録する", class:"btn btn-dark shadow" %>
       </div>
     <% end %>
   </div>

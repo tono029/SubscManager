@@ -14,10 +14,10 @@
     </div>
 
     <%# 円グラフ %>
-    <div class="pie-chart">
-      <p id="chart-title">料金内訳</p>
+    <div class="pie-con">
+      <p class="chart-title">料金内訳</p>
       <%= pie_chart @chart, legend: false, 
-      height: "250px", loading: "loading...",
+      class: "pie-chart", loading: "loading...",
       dataset: {borderColor: "#001220", borderWidth: "3"},
       suffix: "円", thousands: ",",
       donut: true,
