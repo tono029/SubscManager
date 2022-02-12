@@ -53,10 +53,28 @@ body {
 .main {
   height: 100%;
   width: 100%;
-  color: white;
+  color: #001220;
   padding: 150px 40px 25px 40px;
-  background-color: #001220;
+  // background-color: #001220;
+  background-color: #DDE6E2;
   box-sizing: border-box;
+
+  .btn-link {
+    color: #001220;
+  }
+  h1 {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+  }
+
+.btn {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  transition: box-shadow .5s;
+}
+.btn:hover {
+  box-shadow: 0 .1rem 0.3rem rgba(0,0,0,.15)!important;
+}
 }
 
 .main h3 {
@@ -65,6 +83,11 @@ body {
 
 .main p {
   text-align: center;
+  font-size: 1rem;
+}
+
+.zyo {
+  font-size: 20px;
 }
 
 // header------------------------------------------
@@ -84,6 +107,10 @@ header {
   margin-right: auto;
 }
 
+.navbar-toggler {
+  // background-color: #561911;
+}
+
 .nav-item a {
   font-size: 16px;
 }
@@ -97,6 +124,7 @@ header {
 .card {
   margin:auto;
   max-width: 600px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
   .field {
     width: 80%;
     margin: auto;
@@ -116,19 +144,36 @@ header {
   padding: 1rem 0;
 }
 
+.form-control, .form-select {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2)!important;
+  transition: box-shadow .5s;
+}
+
+.form-control:hover, .form-select:hover {
+  box-shadow: 0 .1rem 0.3rem rgba(0,0,0,.2)!important;
+}
+
 // table------------------------------------
-.table {
+table {
   margin: auto;
   max-width: 600px;
   border-radius: 10px;
   border-spacing: 0;
   border-collapse: separate;
   overflow: hidden;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
   .btn-link {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2)!important;
     text-decoration: none;
+  }
+  .btn-link:hover {
+    box-shadow: 0 .1rem 0.3rem rgba(0,0,0,.2)!important;
   }
   .name {
     font-size: 1rem;
+  }
+  span {
+    font-size: 0.7rem;
   }
 }
 
@@ -172,10 +217,13 @@ header {
     background-image: image-url("layer1.svg");
     position: fixed;
     margin-top: 63.5px;
+    // 影
+    filter: drop-shadow(0 .5rem 7px rgba(0,0,0,.2));
   }
 
   .layer2 {
     background-image: image-url("layer2.svg");
+    background-color: #DDE6E2;
   }
 
 // btn----------------------------------
@@ -202,6 +250,11 @@ header {
   h1 {
     text-align: center;
     font-size: 50px;
+    border: none;
+    box-shadow: none;
+  }
+  span {
+    font-size: 25px;
   }
 }
 
@@ -218,7 +271,7 @@ header {
   width: 100%;
   height: 100%;
   p {
-    font-size: 1rem;
+    font-size: 18px;
     padding-bottom: 5px;
   }
 }
@@ -235,9 +288,10 @@ header {
 // flash------------------------------
 .flash-notice {
   text-align: center;
-  background-color: #1a7a59;
+  background-color: #501156;
+  color: white;
   border-radius: 10px;
-  margin: auto;
+  margin: 5px auto;
   max-width: 200px;
 }
 
@@ -262,7 +316,8 @@ header {
   text-align: center;
   .log-notice {
     text-align: center;
-    background-color: #1a7a59;
+    color: white;
+    background-color: #501156;
     border-radius: 10px;
     margin: auto;
     max-width: 250px;
@@ -281,9 +336,15 @@ header {
   border-color: #125635;
   max-width: 100%;
   height: auto;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 }
 
 // pagination-----------------------------
+.pagiWrapper nav{
+  overflow: hidden;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
+
 .pagination li a {
   color: gray;
   border: none;
@@ -293,6 +354,9 @@ header {
 .links {
   max-width: 600px;
   margin: auto;
+  .btn-link {
+    box-shadow: none !important;
+  }
 }
 
 

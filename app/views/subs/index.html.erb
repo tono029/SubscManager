@@ -1,15 +1,16 @@
-<h3>登録サービス一覧</h3><br/>
+<div class="flash-notice">
+  <%= flash[:notice] %>
+</div>
+
+<h1>登録サービス一覧</h1>
+<hr/>
 
 <%# サービスが登録されていれば %>
 <% if @subs.count != 0 %>
-  <div class="flash-notice">
-    <%= flash[:notice] %>
-  </div>
-
   <div class="fee-pie">
     <div class="fee">
       <p id="first"><%= "月々の料金は" %></p>
-      <h1><%= @total_fee.to_s(:delimited) + "円" %></h1>
+      <h1><%= @total_fee.to_s(:delimited) %><span>円</span></h1>
       <p id="end"><%= "です。" %></p>
     </div>
 
@@ -44,7 +45,7 @@
             <td align="center"><%= link_to sub.sub_name, sub.url,
             target: :_blank, rel: "noopener noreferrer", class: "name" %></td>
           <% end %>
-          <td align="center"><%= sub.fee.to_s(:delimited) + "円 " + sub.period %></td>
+          <td align="center"><%= sub.fee.to_s(:delimited) %><span><%= "円 " + sub.period %></span></td>
           <td align="center"><%= link_to '編集', edit_sub_path(sub), class:"btn btn-link btn-sm" %></td>
           <td align="center"><%= link_to '削除', sub, method: :delete,
            data: { confirm: '削除してよろしいですか？' }, class:"btn btn-link btn-sm" %></td>
