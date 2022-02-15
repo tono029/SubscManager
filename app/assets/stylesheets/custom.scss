@@ -68,13 +68,19 @@ body {
     margin: auto;
   }
 
-.btn {
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-  transition: box-shadow .5s;
-}
-.btn:hover {
-  box-shadow: 0 .1rem 0.3rem rgba(0,0,0,.15)!important;
-}
+  .btn {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    transition: box-shadow .5s;
+  }
+
+  .btn:hover {
+    box-shadow: 0 .1rem 0.3rem rgba(0,0,0,.15)!important;
+  }
+
+  hr {
+    margin: 1rem auto;
+    max-width: 700px;
+  }
 }
 
 .main h3 {
@@ -197,11 +203,6 @@ table {
   }
 }
 
-
-.shared-links {
-  text-align: right;
-}
-
 // spacer--------------------------------------------
 .spacer { 
   aspect-ratio: 900/50;
@@ -288,7 +289,7 @@ table {
 // flash------------------------------
 .flash-notice {
   text-align: center;
-  background-color: #501156;
+  background-color: #001220;
   color: white;
   border-radius: 10px;
   margin: 5px auto;
@@ -317,7 +318,7 @@ table {
   .log-notice {
     text-align: center;
     color: white;
-    background-color: #501156;
+    background-color: #001220;
     border-radius: 10px;
     margin: auto;
     max-width: 250px;
@@ -351,11 +352,14 @@ table {
 }
 
 // shared-links
-.links {
-  max-width: 600px;
+.shared-links {
+  text-align: right;
   margin: auto;
+  max-width: 600px;
+  box-shadow: none;
   .btn-link {
     box-shadow: none !important;
+    // text-decoration: none;
   }
 }
 
