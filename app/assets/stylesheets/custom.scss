@@ -40,21 +40,21 @@ form input[type="submit"] {
 /* 共通レイアウト ================================ */
 body {
   color: #2d3133;
-  background-color: #ffffff;
+  background-color: #DDE6E2;
   width: 100%;
   margin: 0;
   height: 100%;
   min-height: 100%;
   // grid配置
   display: grid;
-  grid-template-rows: 1fr auto auto;
+  grid-template-rows:  auto auto 1fr auto ;
 }
 
 .main {
   height: 100%;
   width: 100%;
   color: #001220;
-  padding: 150px 40px 25px 40px;
+  padding: 25px 40px 25px 40px;
   // background-color: #001220;
   background-color: #DDE6E2;
   box-sizing: border-box;
@@ -90,6 +90,7 @@ body {
 .main p {
   text-align: center;
   font-size: 1rem;
+  font-weight: 400;
 }
 
 .zyo {
@@ -98,9 +99,15 @@ body {
 
 // header------------------------------------------
 header {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
   z-index: 2;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .navbar {
@@ -111,10 +118,6 @@ header {
 .navbar-brand  {
   font-size: 25px;
   margin-right: auto;
-}
-
-.navbar-toggler {
-  // background-color: #561911;
 }
 
 .nav-item a {
@@ -130,7 +133,7 @@ header {
 .card {
   margin:auto;
   max-width: 600px;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  box-shadow: 0 .5rem 10px rgba(0,0,0,.15)!important;
   .field {
     width: 80%;
     margin: auto;
@@ -151,12 +154,12 @@ header {
 }
 
 .form-control, .form-select {
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2)!important;
-  transition: box-shadow .5s;
+  box-shadow: 0 5px 7px rgba(0,0,0,0.1)!important;
+  transition: box-shadow .3s;
 }
 
 .form-control:hover, .form-select:hover {
-  box-shadow: 0 .1rem 0.3rem rgba(0,0,0,.2)!important;
+  box-shadow: 0 .1rem 0.3rem rgba(0,0,0,.1)!important;
 }
 
 // table------------------------------------
@@ -216,8 +219,9 @@ table {
   .layer1 {
     // assetにある画像
     background-image: image-url("layer1.svg");
-    position: fixed;
-    margin-top: 63.5px;
+    background-size: cover;
+    position: sticky;
+    top: 63.5px;
     // 影
     filter: drop-shadow(0 .5rem 7px rgba(0,0,0,.2));
   }

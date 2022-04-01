@@ -3,10 +3,12 @@
     style="background-color: #125635;">
     <div class="container-fluid">
 
-      <%# アイコン %>
-      <%= image_tag "icon.svg", size: "30x24" %>
-      <%# プロジェクト名 %>
-      <%= link_to "SubscManager", root_path, class:"navbar-brand" %>
+      <div class="header-left">
+        <%# アイコン %>
+        <%= image_tag "icon.svg", size: "30x24" %>
+        <%# プロジェクト名 %>
+        <%= link_to "SubscManager", root_path, class:"navbar-brand" %>
+      </div>
 
       <%# 画面が小さい時に出るドグルアイコン %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
